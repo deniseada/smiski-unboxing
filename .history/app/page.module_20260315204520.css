@@ -1,0 +1,244 @@
+.page {
+  --bg: #c8d7c0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.stage {
+  position: relative;
+  width: min(1080px, 100vw);
+  aspect-ratio: 1080 / 768;
+  isolation: isolate;
+  overflow: hidden;
+  background: transparent;
+}
+
+.smiskiHead {
+  z-index: 0;
+  position: absolute;
+  left: -2.2%;
+  top: 1.4%;
+  width: 104.9%;
+  height: auto;
+}
+
+.spotlight {
+  z-index: 1;
+  position: absolute;
+  left: 12.8%;
+  top: 2.5%;
+  width: 74.4%;
+  height: auto;
+}
+
+.topBar {
+  position: absolute;
+  top: 5.2%;
+  left: 8%;
+  right: 6.7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 6;
+}
+
+.logo {
+  width: 31%;
+  height: auto;
+}
+
+.audioButton,
+.startButton {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.audioButton img {
+  width: 86px;
+  height: auto;
+  display: block;
+}
+
+.content {
+  position: absolute;
+  top: 20.4%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  width: 64%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.smiskiWord {
+  width: 79%;
+  height: auto;
+}
+
+.unboxingWord {
+  width: 84%;
+  margin-top: 0.6%;
+  height: auto;
+}
+
+.startButton img {
+  margin-top: 5.8%;
+  width: 58%;
+  height: auto;
+  display: block;
+}
+
+.buttonShadow {
+  width: 42%;
+  height: auto;
+  margin-top: -2.8%;
+  opacity: 0.32;
+}
+
+.sideDots {
+  position: absolute;
+  left: 50%;
+  top: 67.2%;
+  width: 42%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  z-index: 4;
+}
+
+.dot {
+  width: 57px;
+  height: 57px;
+  border-radius: 50%;
+  background: rgba(162, 174, 128, 0.55);
+}
+
+.yoga,
+.cheer,
+.book,
+.ground {
+  position: absolute;
+  z-index: 6;
+  height: auto;
+}
+
+.yoga {
+  left: 7%;
+  bottom: 3.8%;
+  width: 23.4%;
+}
+
+.cheer {
+  right: 7.2%;
+  bottom: 3.4%;
+  width: 22.5%;
+}
+
+.book {
+  left: 50%;
+  bottom: 4.2%;
+  width: 20%;
+  transform: translateX(-50%);
+}
+
+.ground {
+  left: 50%;
+  bottom: 3.1%;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 3;
+}
+
+@media (max-width: 640px) {
+  .stage {
+    width: 100vw;
+    height: 100vh;
+    aspect-ratio: auto;
+  }
+
+  .smiskiHead {
+    width: 135%;
+    left: -18%;
+    top: 6%;
+  }
+
+  .spotlight {
+    width: 100%;
+    left: 0;
+    top: 9%;
+  }
+
+  .topBar {
+    left: 6%;
+    right: 6%;
+    top: 2.6%;
+  }
+
+  .logo {
+    width: 56%;
+  }
+
+  .audioButton img {
+    width: 64px;
+  }
+
+  .content {
+    top: 27%;
+    width: 100%;
+  }
+
+  .smiskiWord {
+    width: 85%;
+  }
+
+  .unboxingWord {
+    width: 90%;
+    margin-top: 2%;
+  }
+
+  .startButton img {
+    margin-top: 6.5%;
+    width: 62%;
+  }
+
+  .buttonShadow {
+    width: 44%;
+    margin-top: -3%;
+  }
+
+  .sideDots {
+    width: 70%;
+    top: 64.8%;
+  }
+
+  .yoga {
+    left: 2.2%;
+    bottom: 11%;
+    width: 37%;
+  }
+
+  .cheer {
+    right: 2.4%;
+    bottom: 11%;
+    width: 35%;
+  }
+
+  .book {
+    width: 32%;
+    bottom: 12%;
+  }
+
+  .ground {
+    width: 146%;
+    bottom: 8%;
+  }
+}

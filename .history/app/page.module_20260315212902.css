@@ -38,9 +38,9 @@
 }
 
 .smiskiHead {
-  left: 0;
-  top: 5.1%;
-  width: 100%;
+  left: -4.03%;
+  top: 4.97%;
+  width: 108.06%;
   z-index: 0;
 }
 
@@ -95,6 +95,23 @@
   display: block;
   width: 100%;
   height: auto;
+}
+
+.sideDots {
+  position: absolute;
+  left: 19.1%;
+  top: 68.75%;
+  width: 61.3%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 5;
+}
+
+.dot {
+  width: 5.35%;
+  aspect-ratio: 1 / 1;
+  border-radius: 999px;
+  background: rgba(168, 178, 139, 0.55);
 }
 
 .yoga {

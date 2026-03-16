@@ -1,0 +1,133 @@
+.page {
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  background: #c8d7c0;
+}
+
+.stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.smiskiHead,
+.spotlight,
+.logo,
+.audio,
+.smiskiWord,
+.unboxingWord,
+.yoga,
+.cheer,
+.book,
+.ground,
+.startButton {
+  position: absolute;
+  height: auto;
+}
+
+.smiskiHead {
+  left: -2.5%;
+  top: 2.5%;
+  width: 104.9%;
+  z-index: 0;
+}
+
+.spotlight {
+  left: 11.3%;
+  top: 6.9%;
+  width: 77.4%;
+  z-index: 1;
+}
+
+.logo {
+  left: 40%;
+  top: 9.1%;
+  width: 27.6%;
+  z-index: 6;
+}
+
+.audio {
+  left: 87.4%;
+  top: 5.2%;
+  width: 10.7%;
+  z-index: 6;
+}
+
+.smiskiWord {
+  left: 20.1%;
+  top: 34.8%;
+  width: 59.7%;
+  z-index: 6;
+}
+
+.unboxingWord {
+  left: 19.5%;
+  top: 46%;
+  width: 60.9%;
+  z-index: 6;
+}
+
+.startButton {
+  left: 32.5%;
+  top: 62.1%;
+  width: 35%;
+  z-index: 7;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.startButton img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.sideDots {
+  position: absolute;
+  left: 25.3%;
+  top: 68.8%;
+  width: 44.3%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 5;
+}
+
+.dot {
+  width: 57px;
+  height: 57px;
+  border-radius: 50%;
+  background: rgba(162, 174, 128, 0.55);
+}
+
+.yoga {
+  left: 6.5%;
+  bottom: 7.6%;
+  width: 25.4%;
+  z-index: 8;
+}
+
+.cheer {
+  left: 73.9%;
+  bottom: 7.6%;
+  width: 23.1%;
+  z-index: 8;
+}
+
+.book {
+  left: 39.9%;
+  bottom: 6.3%;
+  width: 20.2%;
+  z-index: 8;
+}
+
+.ground {
+  left: -8.9%;
+  bottom: 5.3%;
+  width: 117.8%;
+  z-index: 4;
+}
