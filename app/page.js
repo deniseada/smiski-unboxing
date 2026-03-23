@@ -1,5 +1,13 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Baloo_2 } from "next/font/google";
 import styles from "./page.module.css";
+import VariableProximity from "./components/VariableProximity";
+
+const displayFont = Baloo_2({
+  subsets: ["latin"],
+  weight: ["700", "800"],
+});
 
 export default function Home() {
   return (
@@ -40,26 +48,28 @@ export default function Home() {
             className={styles.audio}
           />
 
-          <Image
-            src="/images/landing-page/smiski.png"
-            alt="SMISKI"
-            width={645}
-            height={118}
-            priority
-            className={styles.smiskiWord}
-          />
-          <Image
-            src="/images/landing-page/unboxing.png"
-            alt="UNBOXING"
-            width={658}
-            height={172}
-            priority
-            className={styles.unboxingWord}
-          />
+          <h1 className={`${styles.smiskiWord} ${displayFont.className}`}>
+            <VariableProximity
+              label="SMISKI"
+              fromFontVariationSettings="'wght' 500"
+              toFontVariationSettings="'wght' 900"
+              radius={180}
+              falloff="gaussian"
+            />
+          </h1>
+          <h2 className={`${styles.unboxingWord} ${displayFont.className}`}>
+            <VariableProximity
+              label="UNBOXING"
+              fromFontVariationSettings="'wght' 500"
+              toFontVariationSettings="'wght' 900"
+              radius={180}
+              falloff="gaussian"
+            />
+          </h2>
 
-          <button
+          <Link
+            href="/unboxing"
             className={styles.startButton}
-            type="button"
             aria-label="Start"
           >
             <Image
@@ -69,7 +79,7 @@ export default function Home() {
               height={115}
               priority
             />
-          </button>
+          </Link>
 
           <Image
             src="/images/landing-page/yoga-smiski.png"

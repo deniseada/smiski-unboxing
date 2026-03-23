@@ -17,7 +17,9 @@
   left: 50%;
   top: 50%;
   width: min(100vw, calc(100dvh * 1.40625));
-  height: min(100dvh, calc(100vw / 1.40625));
+  max-height: 100dvh;
+  aspect-ratio: 1440 / 1024;
+  height: auto;
   transform: translate(-50%, -50%);
   overflow: hidden;
 }
@@ -42,12 +44,15 @@
   top: 5.1%;
   width: 100%;
   z-index: 0;
+  animation:
+    reveal 700ms ease-out both 40ms,
+    headFloat 6s ease-in-out infinite 900ms;
 }
 
 .spotlight {
-  left: 13.51%;
-  top: -10.74%;
-  width: 71.63%;
+  left: 11.9%;
+  top: -5.9%;
+  width: 75.2%;
   z-index: 1;
 }
 
@@ -56,27 +61,51 @@
   top: 8.2%;
   width: 20.83%;
   z-index: 6;
+  animation: reveal 620ms ease-out both 140ms;
 }
 
 .audio {
   left: 90.28%;
   top: 4.98%;
-  width: 5.83%;
+  width: 50px;
   z-index: 6;
+  animation:
+    reveal 620ms ease-out both 200ms,
+    audioFloat 5s ease-in-out infinite 1.1s;
 }
 
 .smiskiWord {
-  left: 27.4%;
-  top: 35.05%;
-  width: 45.2%;
+  left: 50%;
+  top: 28.2%;
+  transform: translateX(-50%);
   z-index: 6;
+  margin: 0;
+  color: #5b6f1f;
+  font-size: clamp(44px, 6.5vw, 96px);
+  font-weight: 800;
+  letter-spacing: 0.095em;
+  line-height: 0.92;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  animation: reveal 700ms ease-out both 260ms;
 }
 
 .unboxingWord {
-  left: 26.95%;
-  top: 48.78%;
-  width: 46.1%;
+  left: 50%;
+  top: 41.9%;
+  transform: translateX(-50%);
   z-index: 6;
+  margin: 0;
+  color: #5b6f1f;
+  font-size: clamp(56px, 8.6vw, 132px);
+  font-weight: 800;
+  letter-spacing: 0.035em;
+  line-height: 0.9;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  animation: reveal 720ms ease-out both 340ms;
 }
 
 .startButton {
@@ -89,12 +118,20 @@
   margin: 0;
   background: transparent;
   cursor: pointer;
+  animation:
+    reveal 700ms ease-out both 430ms,
+    buttonPulse 2.8s ease-in-out infinite 1.4s;
 }
 
 .startButton img {
   display: block;
   width: 100%;
   height: auto;
+  transition: transform 220ms ease;
+}
+
+.startButton:hover img {
+  transform: translateY(-2px) scale(1.035);
 }
 
 .yoga {
@@ -102,6 +139,9 @@
   top: 66.72%;
   width: 17.55%;
   z-index: 8;
+  animation:
+    reveal 780ms ease-out both 480ms,
+    smiskiBobLeft 3.6s ease-in-out infinite 1.1s;
 }
 
 .cheer {
@@ -109,6 +149,9 @@
   top: 62.26%;
   width: 16.78%;
   z-index: 8;
+  animation:
+    reveal 780ms ease-out both 540ms,
+    smiskiBobRight 3.9s ease-in-out infinite 1s;
 }
 
 .book {
@@ -116,6 +159,9 @@
   top: 77.86%;
   width: 13.68%;
   z-index: 8;
+  animation:
+    reveal 780ms ease-out both 600ms,
+    smiskiBobCenter 3.3s ease-in-out infinite 1.2s;
 }
 
 .ground {
@@ -123,6 +169,128 @@
   top: 87.68%;
   width: 86.8%;
   z-index: 4;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    filter: blur(6px);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes headFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-0.9%);
+  }
+}
+
+@keyframes audioFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-4%) rotate(5deg);
+  }
+}
+
+@keyframes buttonPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.022);
+  }
+}
+
+@keyframes smiskiBobLeft {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  25% {
+    transform: translateX(0.9%) translateY(-2.7%) rotate(-2.2deg);
+  }
+
+  50% {
+    transform: translateX(1.5%) translateY(-4.6%) rotate(-3.1deg);
+  }
+
+  75% {
+    transform: translateX(0.5%) translateY(-2.2%) rotate(-1.2deg);
+  }
+}
+
+@keyframes smiskiBobRight {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  25% {
+    transform: translateX(-1.1%) translateY(-2.4%) rotate(2deg);
+  }
+
+  50% {
+    transform: translateX(-1.8%) translateY(-4.1%) rotate(3deg);
+  }
+
+  75% {
+    transform: translateX(-0.7%) translateY(-2.1%) rotate(1.4deg);
+  }
+}
+
+@keyframes smiskiBobCenter {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  20% {
+    transform: translateX(-0.5%) translateY(-1.8%) rotate(-1.2deg);
+  }
+
+  45% {
+    transform: translateX(0.8%) translateY(-3.5%) rotate(1.6deg);
+  }
+
+  70% {
+    transform: translateX(-0.3%) translateY(-2.6%) rotate(-0.8deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .smiskiHead,
+  .spotlight,
+  .logo,
+  .audio,
+  .smiskiWord,
+  .unboxingWord,
+  .startButton,
+  .yoga,
+  .cheer,
+  .book,
+  .ground {
+    animation: none;
+  }
+
+  .startButton img {
+    transition: none;
+  }
 }
 
 @media (max-width: 700px) {
