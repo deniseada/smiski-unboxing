@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Baloo_2 } from "next/font/google";
@@ -98,8 +98,22 @@ const POSSIBLE_PICKS = [
 
 export default function UnboxingPage() {
   const [activeSeries, setActiveSeries] = useState("DRESSING");
-  const [activeBoxId, setActiveBoxId] = useState(CENTER_BOXES[0].id);
+  const [activeBoxId, setActiveBoxId] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  useEffect(() => {
+    const handlePointerDown = (event) => {
+      if (!event.target.closest('[data-box-button="true"]')) {
+        setActiveBoxId(null);
+      }
+    };
+
+    document.addEventListener("pointerdown", handlePointerDown);
+
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+    };
+  }, []);
 
   return (
     <div className={styles.page}>
@@ -110,7 +124,14 @@ export default function UnboxingPage() {
             className={styles.roundButton}
             aria-label="Back to home"
           >
-            ⌂
+            <Image
+              src="/svg/home.svg"
+              alt="Home"
+              width={40}
+              height={40}
+              priority
+              className={styles.homeIcon}
+            />
           </Link>
 
           <Image
@@ -180,7 +201,7 @@ export default function UnboxingPage() {
 
             <div className={styles.centerStage}>
               <Image
-                src="/images/moving-series/Remove tool edits.png"
+                src="/images/moving-series/series1-box.png"
                 alt="Smiski blind box display tray"
                 width={700}
                 height={700}
@@ -192,6 +213,7 @@ export default function UnboxingPage() {
                 <button
                   key={item.id}
                   type="button"
+                  data-box-button="true"
                   className={`${styles.stackBox} ${
                     activeBoxId === item.id ? styles.hotspotActive : ""
                   }`}

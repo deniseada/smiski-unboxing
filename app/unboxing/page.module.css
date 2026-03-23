@@ -9,12 +9,12 @@
 
 .layout {
   min-height: 100dvh;
-  max-width: 980px;
+  max-width: 1180px;
   margin: 0 auto;
-  padding: clamp(10px, 1.2vw, 18px);
+  padding: clamp(6px, 0.8vw, 10px);
   display: grid;
   grid-template-rows: auto 1fr;
-  gap: clamp(8px, 1vw, 14px);
+  gap: clamp(4px, 0.7vw, 10px);
 }
 
 .topBar {
@@ -37,7 +37,7 @@
   background: #37a34a;
   color: #f4f7e8;
   font:
-    800 clamp(11px, 1vw, 15px) / 1 "Baloo 2",
+    800 clamp(16px, 1.4vw, 22px) / 1 "Baloo 2",
     sans-serif;
   display: grid;
   place-items: center;
@@ -48,6 +48,11 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.homeIcon {
+  width: 54%;
+  height: 54%;
 }
 
 .roundButton:focus-visible,
@@ -62,8 +67,11 @@
 .playArea {
   min-height: 0;
   display: grid;
-  grid-template-columns: minmax(140px, 190px) minmax(320px, 1fr) minmax(180px, 240px);
-  gap: clamp(12px, 1.2vw, 20px);
+  grid-template-columns: minmax(170px, 220px) minmax(320px, 1fr) minmax(
+      170px,
+      220px
+    );
+  gap: clamp(8px, 0.9vw, 14px);
   align-items: start;
   margin-top: 4px;
 }
@@ -80,7 +88,7 @@
   background: #37a34a;
   box-shadow: 0 10px 20px rgb(0 0 0 / 16%);
   width: 100%;
-  max-width: 190px;
+  max-width: 220px;
   padding: 12px 9px 10px;
   transition: opacity 220ms ease;
 }
