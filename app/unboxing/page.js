@@ -17,72 +17,72 @@ const SERIES_OPTIONS = ["HIPPERS", "DRESSING", "YOGA", "LIVING", "SERIES 1"];
 const CENTER_BOXES = [
   {
     id: "box-1",
-    top: "73%",
-    left: "20%",
-    size: "24%",
+    top: "77%",
+    left: "27%",
+    size: "19%",
     zIndex: 6,
   },
   {
     id: "box-2",
-    top: "73%",
-    left: "35%",
-    size: "24%",
+    top: "77%",
+    left: "40%",
+    size: "19%",
     zIndex: 6,
   },
   {
     id: "box-3",
-    top: "73%",
-    left: "50%",
-    size: "24%",
+    top: "77%",
+    left: "53%",
+    size: "19%",
     zIndex: 6,
   },
   {
     id: "box-4",
-    top: "73%",
-    left: "65%",
-    size: "24%",
+    top: "77%",
+    left: "66%",
+    size: "19%",
     zIndex: 6,
   },
   {
     id: "box-5",
-    top: "64%",
-    left: "28%",
-    size: "22%",
+    top: "69%",
+    left: "33%",
+    size: "17%",
     zIndex: 5,
   },
   {
     id: "box-6",
-    top: "64%",
-    left: "49%",
-    size: "22%",
+    top: "69%",
+    left: "46%",
+    size: "17%",
     zIndex: 5,
   },
   {
     id: "box-7",
-    top: "57%",
-    left: "39%",
-    size: "20%",
+    top: "69%",
+    left: "59%",
+    size: "17%",
     zIndex: 4,
   },
   {
     id: "box-8",
-    top: "57%",
-    left: "54%",
-    size: "20%",
+    top: "63%",
+    left: "39%",
+    size: "15%",
     zIndex: 4,
   },
   {
     id: "box-9",
-    top: "51%",
-    left: "33%",
-    size: "18%",
+    top: "63%",
+    left: "51%",
+    size: "15%",
     zIndex: 3,
   },
   {
     id: "box-10",
-    top: "51%",
-    left: "46%",
-    size: "18%",
+    top: "58%",
+    left: "45%",
+    size: "13%",
     zIndex: 3,
   },
 ];
@@ -110,7 +110,7 @@ export default function UnboxingPage() {
             className={styles.roundButton}
             aria-label="Back to home"
           >
-            H
+            ⌂
           </Link>
 
           <Image
@@ -127,7 +127,14 @@ export default function UnboxingPage() {
             className={styles.roundButton}
             aria-label="Music"
           >
-            M
+            <Image
+              src="/images/landing-page/audio.png"
+              alt="Audio"
+              width={116}
+              height={116}
+              priority
+              className={styles.audioIcon}
+            />
           </button>
         </section>
 
@@ -198,7 +205,7 @@ export default function UnboxingPage() {
                   aria-label={`Open blind box ${index + 1}`}
                 >
                   <Image
-                    src="/images/moving-series/moving-box.png"
+                    src="/images/dressing-series/dressing-series.png"
                     alt=""
                     width={260}
                     height={500}
@@ -225,6 +232,14 @@ export default function UnboxingPage() {
 
           <aside className={styles.infoColumn}>
             <div className={styles.instructionsCard}>
+              <Image
+                src="/images/dressing-series/shirt-on.png"
+                alt="Smiski shirt-on"
+                width={250}
+                height={207}
+                className={styles.instructionsMascot}
+              />
+
               <h2 className={`${styles.cardTitle} ${displayFont.className}`}>
                 INSTRUCTIONS:
               </h2>

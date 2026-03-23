@@ -11,10 +11,10 @@
   min-height: 100dvh;
   max-width: 980px;
   margin: 0 auto;
-  padding: clamp(8px, 1.2vw, 14px);
+  padding: clamp(10px, 1.2vw, 18px);
   display: grid;
   grid-template-rows: auto 1fr;
-  gap: clamp(4px, 0.8vw, 10px);
+  gap: clamp(8px, 1vw, 14px);
 }
 
 .topBar {
@@ -25,23 +25,29 @@
 }
 
 .logo {
-  width: clamp(120px, 14vw, 170px);
+  width: clamp(128px, 12vw, 180px);
   height: auto;
 }
 
 .roundButton {
-  width: clamp(30px, 3vw, 40px);
+  width: clamp(36px, 3.3vw, 48px);
   aspect-ratio: 1;
   border: none;
   border-radius: 999px;
   background: #37a34a;
   color: #f4f7e8;
   font:
-    800 clamp(10px, 1vw, 14px) / 1 "Baloo 2",
+    800 clamp(11px, 1vw, 15px) / 1 "Baloo 2",
     sans-serif;
   display: grid;
   place-items: center;
   box-shadow: 0 6px 12px rgb(0 0 0 / 14%);
+}
+
+.audioIcon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .roundButton:focus-visible,
@@ -56,9 +62,10 @@
 .playArea {
   min-height: 0;
   display: grid;
-  grid-template-columns: auto minmax(250px, 1fr) minmax(140px, 190px);
-  gap: clamp(6px, 0.9vw, 12px);
+  grid-template-columns: minmax(140px, 190px) minmax(320px, 1fr) minmax(180px, 240px);
+  gap: clamp(12px, 1.2vw, 20px);
   align-items: start;
+  margin-top: 4px;
 }
 
 .sidebar {
@@ -73,13 +80,13 @@
   background: #37a34a;
   box-shadow: 0 10px 20px rgb(0 0 0 / 16%);
   width: 100%;
-  max-width: 160px;
-  padding: 10px 8px 10px;
+  max-width: 190px;
+  padding: 12px 9px 10px;
   transition: opacity 220ms ease;
 }
 
 .sidebarOpen {
-  width: min(15vw, 160px);
+  width: 100%;
 }
 
 .sidebarClosed {
@@ -93,15 +100,15 @@
 
 .sidebarToggle {
   position: absolute;
-  right: -9px;
+  right: -10px;
   top: 8px;
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   border: none;
   background: #ece96f;
   border-radius: 4px;
   font:
-    800 14px / 1 "Baloo 2",
+    800 15px / 1 "Baloo 2",
     sans-serif;
   color: #142420;
   z-index: 3;
@@ -111,21 +118,21 @@
 .sidebarTitle {
   color: #eff6dd;
   text-align: center;
-  font-size: clamp(14px, 1.4vw, 20px);
+  font-size: clamp(18px, 1.4vw, 26px);
   letter-spacing: 0.03em;
   line-height: 1;
 }
 
 .seriesList {
-  margin-top: 8px;
+  margin-top: 9px;
   display: grid;
-  gap: 6px;
+  gap: 8px;
 }
 
 .seriesButton {
   border: 0;
-  border-radius: 8px;
-  min-height: 34px;
+  border-radius: 10px;
+  min-height: 42px;
   background: #acd4de;
   color: #f6f7f2;
   text-shadow:
@@ -134,7 +141,7 @@
     1px 0 #5a5a5a,
     0 -1px #5a5a5a;
   letter-spacing: 0.02em;
-  font-size: clamp(13px, 1.1vw, 16px);
+  font-size: clamp(18px, 1.3vw, 22px);
   cursor: pointer;
 }
 
@@ -153,25 +160,27 @@
   color: #5b6f1f;
   text-align: center;
   letter-spacing: 0.02em;
-  font-size: clamp(24px, 2.8vw, 42px);
+  font-size: clamp(42px, 3.9vw, 64px);
   line-height: 0.95;
 }
 
 .centerStage {
   position: relative;
-  width: clamp(170px, 20vw, 250px);
-  margin: 6px auto 0;
+  width: clamp(248px, 25vw, 352px);
+  margin: 10px auto 0;
+  overflow: hidden;
 }
 
 .mainBox {
+  display: block;
   width: 100%;
   height: auto;
 }
 
 .stackBox {
   position: absolute;
-  min-width: 34px;
-  max-width: 72px;
+  min-width: 39px;
+  max-width: 84px;
   border: 0;
   padding: 0;
   background: transparent;
@@ -195,11 +204,11 @@
 }
 
 .boxGrid {
-  margin: 2px auto 0;
-  width: min(100%, 290px);
+  margin: 14px auto 0;
+  width: min(100%, 322px);
   display: grid;
-  grid-template-columns: repeat(3, minmax(64px, 1fr));
-  gap: 6px;
+  grid-template-columns: repeat(3, minmax(70px, 1fr));
+  gap: 10px;
 }
 
 .boxCard {
@@ -207,74 +216,103 @@
   border-radius: 10px;
   background: transparent;
   padding: 0;
+  height: clamp(88px, 7.6vw, 112px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .boxImage {
-  width: 100%;
-  height: auto;
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
 }
 
 .infoColumn {
   display: grid;
-  gap: 10px;
+  gap: 12px;
+  padding-top: 0;
+  align-self: end;
 }
 
 .instructionsCard,
 .secretCard {
   background: rgb(236 234 191 / 78%);
-  border-radius: 999px;
   padding: clamp(10px, 1.2vw, 14px);
   border: 1px solid rgb(0 0 0 / 8%);
+}
+
+.instructionsCard {
+  position: relative;
+  justify-self: center;
+  width: clamp(224px, 19vw, 270px);
+  aspect-ratio: 1 / 1;
+  border-radius: 999px;
+  padding: clamp(20px, 1.6vw, 26px) clamp(14px, 1.2vw, 18px)
+    clamp(12px, 1vw, 14px);
+}
+
+.instructionsMascot {
+  position: absolute;
+  width: clamp(72px, 6.6vw, 100px);
+  height: auto;
+  right: clamp(8px, 1.4vw, 14px);
+  top: clamp(-48px, -4vw, -22px);
 }
 
 .cardTitle,
 .secretTitle {
   margin: 0;
   color: #475222;
-  font-size: clamp(18px, 1.2vw, 22px);
+  font-size: clamp(28px, 1.3vw, 34px);
   letter-spacing: 0.01em;
 }
 
 .instructionsList {
-  margin: 6px 0 0 14px;
+  margin: 8px 0 0 14px;
   color: #2f3322;
   font:
-    700 clamp(10px, 0.72vw, 12px) / 1.35 "Baloo 2",
+    700 clamp(10px, 0.56vw, 12px) / 1.3 "Baloo 2",
     sans-serif;
 }
 
 .noteText {
-  margin-top: 6px;
+  margin-top: 8px;
   color: #3fa75f;
   font:
-    700 clamp(9px, 0.68vw, 11px) / 1.25 "Baloo 2",
+    700 clamp(9px, 0.52vw, 11px) / 1.22 "Baloo 2",
     sans-serif;
 }
 
 .secretCard {
+  justify-self: center;
+  width: clamp(158px, 13.5vw, 202px);
   border-radius: 24px;
   text-align: center;
 }
 
 .secretImage {
-  width: min(100%, 104px);
+  width: min(100%, 126px);
   height: auto;
 }
 
 .secretOdds {
-  margin-top: 2px;
+  margin-top: 6px;
   color: #1f2e12;
   font:
-    800 clamp(16px, 1.3vw, 22px) / 1 "Baloo 2",
+    800 clamp(22px, 1.35vw, 30px) / 1 "Baloo 2",
     sans-serif;
 }
 
 @media (max-width: 1080px) {
   .playArea {
-    grid-template-columns: minmax(46px, auto) minmax(300px, 1fr);
+    grid-template-columns: minmax(48px, auto) minmax(280px, 1fr);
     grid-template-areas:
       "sidebar main"
       "sidebar info";
+    margin-top: 4px;
   }
 
   .sidebar {
@@ -287,10 +325,14 @@
 
   .infoColumn {
     grid-area: info;
-    grid-template-columns: repeat(2, minmax(180px, 1fr));
+    grid-template-columns: repeat(2, minmax(165px, 1fr));
   }
 
-  .instructionsCard,
+  .instructionsCard {
+    width: clamp(210px, 24vw, 260px);
+    border-radius: 999px;
+  }
+
   .secretCard {
     border-radius: 26px;
   }
@@ -298,6 +340,7 @@
 
 @media (max-width: 760px) {
   .layout {
+    padding-top: clamp(10px, 2vh, 20px);
     overflow-y: auto;
     max-height: 100dvh;
   }
@@ -308,6 +351,7 @@
       "sidebar"
       "main"
       "info";
+    margin-top: 6px;
   }
 
   .sidebar {
@@ -342,5 +386,9 @@
 
   .boxGrid {
     grid-template-columns: repeat(3, minmax(74px, 1fr));
+  }
+
+  .instructionsCard {
+    width: min(100%, 300px);
   }
 }
