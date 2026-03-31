@@ -14,7 +14,7 @@ const displayFont = Baloo_2({
 
 const SERIES_OPTIONS = ["HIPPERS", "DRESSING", "YOGA", "LIVING", "SERIES 1"];
 
-const CENTER_BOXES = [
+const STACKED_BOXES = [
   {
     id: "box-1",
     top: "77%",
@@ -87,7 +87,7 @@ const CENTER_BOXES = [
   },
 ];
 
-const POSSIBLE_PICKS = [
+const POSSIBLE_FIGURES = [
   "/images/dressing-series/dressing1.png",
   "/images/dressing-series/dressing2.png",
   "/images/dressing-series/dressing3.png",
@@ -100,6 +100,10 @@ export default function UnboxingPage() {
   const [activeSeries, setActiveSeries] = useState("DRESSING");
   const [activeBoxId, setActiveBoxId] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  const sidebarClassName = `${styles.sidebar} ${
+    isSidebarOpen ? styles.sidebarOpen : styles.sidebarClosed
+  }`;
 
   useEffect(() => {
     const handlePointerDown = (event) => {
@@ -160,11 +164,7 @@ export default function UnboxingPage() {
         </section>
 
         <section className={styles.playArea}>
-          <aside
-            className={`${styles.sidebar} ${
-              isSidebarOpen ? styles.sidebarOpen : styles.sidebarClosed
-            }`}
-          >
+          <aside className={sidebarClassName}>
             <SidebarToggleButton
               isOpen={isSidebarOpen}
               onClick={() => setIsSidebarOpen((value) => !value)}
@@ -209,21 +209,21 @@ export default function UnboxingPage() {
                 className={styles.mainBox}
               />
 
-              {CENTER_BOXES.map((item, index) => (
+              {STACKED_BOXES.map((box, index) => (
                 <button
-                  key={item.id}
+                  key={box.id}
                   type="button"
                   data-box-button="true"
                   className={`${styles.stackBox} ${
-                    activeBoxId === item.id ? styles.hotspotActive : ""
+                    activeBoxId === box.id ? styles.hotspotActive : ""
                   }`}
                   style={{
-                    top: item.top,
-                    left: item.left,
-                    width: item.size,
-                    zIndex: item.zIndex,
+                    top: box.top,
+                    left: box.left,
+                    width: box.size,
+                    zIndex: box.zIndex,
                   }}
-                  onClick={() => setActiveBoxId(item.id)}
+                  onClick={() => setActiveBoxId(box.id)}
                   aria-label={`Open blind box ${index + 1}`}
                 >
                   <Image
@@ -238,7 +238,7 @@ export default function UnboxingPage() {
             </div>
 
             <div className={styles.boxGrid}>
-              {POSSIBLE_PICKS.map((image, index) => (
+              {POSSIBLE_FIGURES.map((image, index) => (
                 <div key={`pick-${index + 1}`} className={styles.boxCard}>
                   <Image
                     src={image}
