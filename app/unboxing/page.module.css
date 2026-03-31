@@ -1,20 +1,16 @@
 .page {
   min-height: 100dvh;
-  overflow-x: hidden;
-  background:
-    radial-gradient(circle at 85% 76%, #eceabf 0, #eceabf 10%, transparent 35%),
-    radial-gradient(circle at 8% 84%, #d9e4ba 0, #d9e4ba 10%, transparent 34%),
-    #c8d7c0;
+  background: #c8d7c0;
 }
 
 .layout {
   min-height: 100dvh;
   max-width: 1180px;
   margin: 0 auto;
-  padding: clamp(6px, 0.8vw, 10px);
+  padding: 10px;
   display: grid;
   grid-template-rows: auto 1fr;
-  gap: clamp(4px, 0.7vw, 10px);
+  gap: 8px;
 }
 
 .topBar {
@@ -25,23 +21,17 @@
 }
 
 .logo {
-  width: clamp(128px, 12vw, 180px);
+  width: 180px;
   height: auto;
 }
 
 .roundButton {
-  width: clamp(36px, 3.3vw, 48px);
+  width: 48px;
   aspect-ratio: 1;
-  border: none;
-  border-radius: 999px;
+  border-radius: 50%;
   background: #37a34a;
-  color: #f4f7e8;
-  font:
-    800 clamp(16px, 1.4vw, 22px) / 1 "Baloo 2",
-    sans-serif;
   display: grid;
   place-items: center;
-  box-shadow: 0 6px 12px rgb(0 0 0 / 14%);
 }
 
 .audioIcon {
@@ -58,7 +48,6 @@
 .roundButton:focus-visible,
 .seriesButton:focus-visible,
 .stackBox:focus-visible,
-.boxCard:focus-visible,
 .sidebarToggle:focus-visible {
   outline: 3px solid #f4d400;
   outline-offset: 2px;
@@ -71,7 +60,7 @@
       170px,
       220px
     );
-  gap: clamp(8px, 0.9vw, 14px);
+  gap: 12px;
   align-items: start;
   margin-top: 4px;
 }
@@ -115,9 +104,7 @@
   border: none;
   background: #ece96f;
   border-radius: 4px;
-  font:
-    800 15px / 1 "Baloo 2",
-    sans-serif;
+
   color: #142420;
   z-index: 3;
   cursor: pointer;
@@ -126,7 +113,7 @@
 .sidebarTitle {
   color: #eff6dd;
   text-align: center;
-  font-size: clamp(18px, 1.4vw, 26px);
+  font-size: 24px;
   letter-spacing: 0.03em;
   line-height: 1;
 }
@@ -139,44 +126,32 @@
 
 .seriesButton {
   border: 0;
-  border-radius: 10px;
+  border-radius: 5px;
   min-height: 42px;
-  background: #acd4de;
+  background: #97daeb;
   color: #f6f7f2;
-  text-shadow:
-    -1px 0 #5a5a5a,
-    0 1px #5a5a5a,
-    1px 0 #5a5a5a,
-    0 -1px #5a5a5a;
   letter-spacing: 0.02em;
-  font-size: clamp(18px, 1.3vw, 22px);
+  font-size: 20px;
   cursor: pointer;
 }
 
 .seriesButtonActive {
   background: #dcefd3;
   color: #355233;
-  text-shadow: none;
-}
-
-.mainColumn {
-  min-width: 0;
 }
 
 .title {
-  margin: 0;
   color: #5b6f1f;
   text-align: center;
   letter-spacing: 0.02em;
-  font-size: clamp(42px, 3.9vw, 64px);
+  font-size: 56px;
   line-height: 0.95;
 }
 
 .centerStage {
   position: relative;
-  width: clamp(248px, 25vw, 352px);
+  width: 320px;
   margin: 10px auto 0;
-  overflow: hidden;
 }
 
 .mainBox {
@@ -194,10 +169,6 @@
   background: transparent;
   cursor: pointer;
   transform: translate(-50%, -50%) translateY(0);
-  transition:
-    transform 260ms ease,
-    filter 260ms ease;
-  filter: drop-shadow(0 8px 10px rgb(0 0 0 / 16%));
 }
 
 .hotspotActive {
@@ -224,7 +195,7 @@
   border-radius: 10px;
   background: transparent;
   padding: 0;
-  height: clamp(88px, 7.6vw, 112px);
+  height: 104px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -241,62 +212,52 @@
 .infoColumn {
   display: grid;
   gap: 12px;
-  padding-top: 0;
   align-self: end;
 }
 
 .instructionsCard,
 .secretCard {
   background: rgb(236 234 191 / 78%);
-  padding: clamp(10px, 1.2vw, 14px);
+  padding: 12px;
   border: 1px solid rgb(0 0 0 / 8%);
 }
 
 .instructionsCard {
   position: relative;
   justify-self: center;
-  width: clamp(224px, 19vw, 270px);
-  aspect-ratio: 1 / 1;
-  border-radius: 999px;
-  padding: clamp(20px, 1.6vw, 26px) clamp(14px, 1.2vw, 18px)
-    clamp(12px, 1vw, 14px);
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
 }
 
 .instructionsMascot {
   position: absolute;
-  width: clamp(72px, 6.6vw, 100px);
+  width: 40%;
   height: auto;
-  right: clamp(8px, 1.4vw, 14px);
-  top: clamp(-48px, -4vw, -22px);
+  left: 50%;
 }
 
 .cardTitle,
 .secretTitle {
-  margin: 0;
   color: #475222;
-  font-size: clamp(28px, 1.3vw, 34px);
-  letter-spacing: 0.01em;
 }
 
 .instructionsList {
   margin: 8px 0 0 14px;
+  font-size: 15px;
+  line-height: 30px;
   color: #2f3322;
-  font:
-    700 clamp(10px, 0.56vw, 12px) / 1.3 "Baloo 2",
-    sans-serif;
 }
 
 .noteText {
   margin-top: 8px;
-  color: #3fa75f;
-  font:
-    700 clamp(9px, 0.52vw, 11px) / 1.22 "Baloo 2",
-    sans-serif;
+  color: #2f994f;
+  font-size: 14px;
 }
 
 .secretCard {
   justify-self: center;
-  width: clamp(158px, 13.5vw, 202px);
+  width: 190px;
   border-radius: 24px;
   text-align: center;
 }
@@ -309,48 +270,88 @@
 .secretOdds {
   margin-top: 6px;
   color: #1f2e12;
-  font:
-    800 clamp(22px, 1.35vw, 30px) / 1 "Baloo 2",
-    sans-serif;
+  font-weight: 600;
 }
 
 @media (max-width: 1080px) {
+  .layout {
+    padding: 8px;
+    gap: 6px;
+  }
+
+  .logo {
+    width: 148px;
+  }
+
+  .roundButton {
+    width: 42px;
+  }
+
+  .sidebarTitle {
+    font-size: 21px;
+  }
+
+  .seriesButton {
+    font-size: 18px;
+  }
+
+  .title {
+    font-size: 48px;
+  }
+
   .playArea {
     grid-template-columns: minmax(48px, auto) minmax(280px, 1fr);
-    grid-template-areas:
-      "sidebar main"
-      "sidebar info";
     margin-top: 4px;
   }
 
-  .sidebar {
-    grid-area: sidebar;
-  }
-
-  .mainColumn {
-    grid-area: main;
-  }
-
   .infoColumn {
-    grid-area: info;
     grid-template-columns: repeat(2, minmax(165px, 1fr));
   }
 
   .instructionsCard {
-    width: clamp(210px, 24vw, 260px);
+    width: 240px;
     border-radius: 999px;
   }
 
+  .centerStage {
+    width: 280px;
+  }
+
+  .boxCard {
+    height: 94px;
+  }
+
   .secretCard {
+    width: 170px;
     border-radius: 26px;
   }
 }
 
 @media (max-width: 760px) {
   .layout {
-    padding-top: clamp(10px, 2vh, 20px);
+    padding-top: 16px;
     overflow-y: auto;
     max-height: 100dvh;
+  }
+
+  .logo {
+    width: 128px;
+  }
+
+  .roundButton {
+    width: 36px;
+  }
+
+  .sidebarTitle {
+    font-size: 18px;
+  }
+
+  .seriesButton {
+    font-size: 18px;
+  }
+
+  .title {
+    font-size: 42px;
   }
 
   .playArea {
@@ -396,7 +397,25 @@
     grid-template-columns: repeat(3, minmax(74px, 1fr));
   }
 
+  .boxCard {
+    height: 88px;
+  }
+
   .instructionsCard {
     width: min(100%, 300px);
+  }
+
+  .centerStage {
+    width: 248px;
+  }
+
+  .secretCard {
+    width: 158px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebarBody {
+    transition: none;
   }
 }
