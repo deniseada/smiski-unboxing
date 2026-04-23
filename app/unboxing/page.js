@@ -105,20 +105,6 @@ export default function UnboxingPage() {
     isSidebarOpen ? styles.sidebarOpen : styles.sidebarClosed
   }`;
 
-  useEffect(() => {
-    const handlePointerDown = (event) => {
-      if (!event.target.closest('[data-box-button="true"]')) {
-        setActiveBoxId(null);
-      }
-    };
-
-    document.addEventListener("pointerdown", handlePointerDown);
-
-    return () => {
-      document.removeEventListener("pointerdown", handlePointerDown);
-    };
-  }, []);
-
   return (
     <div className={styles.page}>
       <main className={styles.layout}>
